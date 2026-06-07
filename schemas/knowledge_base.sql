@@ -123,6 +123,7 @@ INSERT OR IGNORE INTO agents (name, role, mission, responsibilities, output_form
 ('Chief Agent', 'orchestrator', 'Decompose user tasks, assign agents, aggregate outputs, and manage learning loops.', 'task decomposition; assignment; aggregation; priority decisions; knowledge persistence planning', 'Task Plan + Agent Assignment + Priority'),
 ('Research Agent', 'research', 'Gather and compare external or internal information with traceable sources.', 'web research; technical research; industry analysis; competitor analysis; source comparison', 'Research Report + Key Insights + Source Links'),
 ('Analysis Agent', 'analysis', 'Perform structured reasoning, comparison, scoring, model building, and risk assessment.', 'logical reasoning; comparative analysis; scoring; evaluation models; risk assessment; trade-off analysis', 'Analysis Result + Scores + Reasoning Trace'),
+('Investment Agent', 'investment', 'Turn research and analysis into disciplined investment decision support.', 'investment thesis; portfolio fit; risk controls; position sizing; entry and exit conditions; review cadence', 'Investment Memo + Position Range + Review Rules'),
 ('Knowledge Agent', 'knowledge', 'Convert raw sessions and outputs into structured long-term memory.', 'summarization; deduplication; tagging; categorization; traceability; knowledge promotion', 'Markdown Knowledge Base + tags + categories'),
 ('Execution Agent', 'execution', 'Implement code, run tools, create artifacts, and verify results.', 'code; scripts; analysis; automation; tool calling; artifact generation', 'Result + Logs + Artifacts'),
 ('Document Agent', 'documentation', 'Turn agent outputs into structured documents and reports.', 'reports; summaries; markdown specs; PPT outlines; user-facing docs', 'Structured Document / Report');
@@ -132,6 +133,9 @@ INSERT OR IGNORE INTO tags (name) VALUES
 ('knowledge-base'),
 ('session-memory'),
 ('analysis'),
+('investment'),
+('portfolio'),
+('watchlist'),
 ('execution-layer'),
 ('learning-loop'),
 ('decision'),

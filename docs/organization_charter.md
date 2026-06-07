@@ -14,6 +14,7 @@ Chief Agent
   |
   +-- Research Agent
   +-- Analysis Agent
+  +-- Investment Agent
   +-- Execution Agent
   +-- Knowledge Agent
   `-- Document Agent
@@ -38,6 +39,12 @@ Codex / Claude Code / CLI / API / File System / GitHub
 
 - 在固定任務範圍內產出可存檔結果
 - 必須回報依據、限制、風險與建議持久化內容
+
+### Investment Agent
+
+- 負責投資 thesis、投資組合適配性、倉位範圍、進出場條件與復盤節奏
+- 所有輸出僅作為決策支持，不作為自動交易或財務建議
+- 缺少 portfolio policy 時，不應產出高信心投資建議
 
 ### Execution Layer
 
@@ -113,4 +120,3 @@ Chief Agent 可以提出新增 agent，但必須滿足至少一項：
 ## 9. 最高原則
 
 不允許重要資訊只停留在對話中。凡是會影響未來判斷、行動、設計或決策的資訊，都應該被寫入 knowledge base。
-

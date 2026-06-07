@@ -1,7 +1,7 @@
 {
   "name": "ai_agent_team_core_loop",
   "version": "0.1.0",
-  "description": "Chief Agent orchestrates research, analysis, execution, knowledge, document agents, execution engines, and knowledge persistence.",
+  "description": "Chief Agent orchestrates research, analysis, investment, execution, knowledge, document agents, execution engines, and knowledge persistence.",
   "steps": [
     {
       "id": "user_input",
@@ -22,13 +22,13 @@
       "action": "execute_assigned_tasks",
       "parallel": true,
       "inputs": ["agent_assignments"],
-      "outputs": ["research_report", "analysis_result", "execution_result", "knowledge_update", "document"]
+      "outputs": ["research_report", "analysis_result", "investment_memo", "execution_result", "knowledge_update", "document"]
     },
     {
       "id": "chief_aggregation",
       "agent": "chief_agent",
       "action": "aggregate_and_resolve",
-      "inputs": ["research_report", "analysis_result", "execution_result", "knowledge_update", "document"],
+      "inputs": ["research_report", "analysis_result", "investment_memo", "execution_result", "knowledge_update", "document"],
       "outputs": ["final_answer", "decisions", "follow_up_tasks"]
     },
     {

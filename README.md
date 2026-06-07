@@ -1,19 +1,19 @@
 # AI Agent OS
 
-AI Agent OS 是一個多代理人認知作業系統與第二大腦知識系統。Chief Agent 負責統籌 Research、Analysis、Execution、Knowledge、Document Agents，Codex / Claude Code 作為執行層，所有重要結果會持續寫入可演化的 knowledge base。
+AI Agent OS is a multi-agent cognitive operating system with a second-brain knowledge base. Chief Agent coordinates Research, Analysis, Investment, Execution, Knowledge, and Document Agents. Codex / Claude Code acts as the execution layer, while important outputs are persisted into the evolving knowledge base.
 
 ```text
 User -> Chief Agent -> Specialist Agents -> Codex / Tools -> Output -> Knowledge Base -> Chief Agent
 ```
 
-## 核心目標
+## Core Goals
 
-- 任務自動拆解
-- 多 Agent 分工
-- 可重用 knowledge base
-- 跨 session / device 延續
-- 決策可追溯
-- 系統可持續演化
+- Break down tasks automatically
+- Assign work across specialist agents
+- Preserve reusable knowledge across sessions and devices
+- Keep decisions traceable
+- Separate reasoning from execution
+- Evolve through repeated work and reviews
 
 ## Repository Structure
 
@@ -23,6 +23,7 @@ User -> Chief Agent -> Specialist Agents -> Codex / Tools -> Output -> Knowledge
 |   |-- chief_agent.md
 |   |-- research_agent.md
 |   |-- analysis_agent.md
+|   |-- investment_agent.md
 |   |-- execution_agent.md
 |   |-- knowledge_agent.md
 |   `-- document_agent.md
@@ -36,6 +37,9 @@ User -> Chief Agent -> Specialist Agents -> Codex / Tools -> Output -> Knowledge
 |   |-- domains/
 |   |   |-- ai_infra/
 |   |   |-- investing/
+|   |   |   |-- company_memos/
+|   |   |   |-- thesis/
+|   |   |   `-- trade_reviews/
 |   |   `-- semiconductors/
 |   |-- entities/
 |   |-- experiments/
@@ -52,13 +56,13 @@ User -> Chief Agent -> Specialist Agents -> Codex / Tools -> Output -> Knowledge
 
 ## Quick Start
 
-初始化本機 SQLite knowledge base：
+Initialize the local SQLite knowledge base:
 
 ```powershell
 python scripts/init_kb.py
 ```
 
-預設產生：
+Default output:
 
 ```text
 knowledge_base/knowledge_base.sqlite
@@ -66,18 +70,35 @@ knowledge_base/knowledge_base.sqlite
 
 ## Operating Model
 
-1. User 提出任務。
-2. Chief Agent 解析需求、拆解任務、分派 agents。
-3. Specialist agents 並行處理研究、分析、執行、知識整理與文件產出。
-4. Codex / Claude Code / tools 負責實際執行。
-5. Chief Agent 整合輸出、決策與下一步。
-6. Knowledge Agent 將有價值資訊寫入 knowledge base。
-7. Knowledge base 回饋 Chief Agent，形成 learning loop。
+1. User submits a task.
+2. Chief Agent decomposes the task and assigns agents.
+3. Specialist agents work on research, analysis, investment framing, execution, knowledge, and documentation.
+4. Codex / Claude Code / tools perform concrete execution.
+5. Chief Agent aggregates results, decisions, and next steps.
+6. Knowledge Agent persists valuable information into the knowledge base.
+7. The knowledge base feeds future decisions and forms a learning loop.
+
+## Investment Workflow
+
+Investment work should produce decision support, not automatic trading instructions.
+
+```text
+Investment question
+-> Chief Agent
+-> Research Agent gathers facts
+-> Analysis Agent evaluates valuation, scenarios, and risks
+-> Investment Agent frames thesis, position sizing, entry/exit conditions, and review rules
+-> Document Agent produces an investment memo
+-> Knowledge Agent persists memo, decisions, and review tasks
+```
 
 ## Key Documents
 
-- `docs/ai_os_system_spec.md`: 正式中文系統規格書
-- `docs/organization_charter.md`: AI Agent OS 組織章程
-- `workflows/agent_loop.json`: 可自動化的核心 agent loop
+- `docs/ai_os_system_spec.md`: Chinese AI OS system specification
+- `docs/organization_charter.md`: AI Agent OS organization charter
+- `agents/investment_agent.md`: Investment strategy and portfolio discipline agent
+- `knowledge_base/domains/investing/investment_framework.md`: Investment analysis framework
+- `knowledge_base/domains/investing/portfolio_policy.md`: Personal portfolio policy template
+- `workflows/agent_loop.json`: Core agent loop
 - `schemas/knowledge_base.sql`: SQLite knowledge base schema
 
