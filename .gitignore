@@ -1,0 +1,12 @@
+# Local knowledge base runtime files
+knowledge_base/*.sqlite
+knowledge_base/*.sqlite-*
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/

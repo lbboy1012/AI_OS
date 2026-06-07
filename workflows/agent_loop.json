@@ -1,0 +1,49 @@
+{
+  "name": "ai_agent_team_core_loop",
+  "version": "0.1.0",
+  "description": "Chief Agent orchestrates research, analysis, execution, knowledge, document agents, execution engines, and knowledge persistence.",
+  "steps": [
+    {
+      "id": "user_input",
+      "agent": "user",
+      "action": "submit_task",
+      "outputs": ["request"]
+    },
+    {
+      "id": "chief_decomposition",
+      "agent": "chief_agent",
+      "action": "decompose_and_assign",
+      "inputs": ["request", "relevant_knowledge"],
+      "outputs": ["task_plan", "agent_assignments", "priority"]
+    },
+    {
+      "id": "parallel_agent_execution",
+      "agent": "specialist_agents",
+      "action": "execute_assigned_tasks",
+      "parallel": true,
+      "inputs": ["agent_assignments"],
+      "outputs": ["research_report", "analysis_result", "execution_result", "knowledge_update", "document"]
+    },
+    {
+      "id": "chief_aggregation",
+      "agent": "chief_agent",
+      "action": "aggregate_and_resolve",
+      "inputs": ["research_report", "analysis_result", "execution_result", "knowledge_update", "document"],
+      "outputs": ["final_answer", "decisions", "follow_up_tasks"]
+    },
+    {
+      "id": "knowledge_persist",
+      "agent": "knowledge_agent",
+      "action": "persist_session_outputs",
+      "inputs": ["request", "final_answer", "decisions", "follow_up_tasks"],
+      "outputs": ["raw_session", "session_summary", "knowledge_items"]
+    },
+    {
+      "id": "learning_loop",
+      "agent": "chief_agent",
+      "action": "improve_agent_system",
+      "inputs": ["knowledge_items", "decisions", "follow_up_tasks"],
+      "outputs": ["agent_updates", "new_agent_proposals"]
+    }
+  ]
+}
