@@ -30,6 +30,8 @@ User -> Chief Agent -> Specialist Agents -> Codex / Tools -> Output -> Knowledge
 |-- docs/
 |   |-- ai_os_system_spec.md
 |   `-- organization_charter.md
+|-- projects/
+|   `-- investment_research/
 |-- knowledge_base/
 |   |-- raw_sessions/
 |   |-- processed_insights/
@@ -92,13 +94,17 @@ Investment question
 -> Knowledge Agent persists memo, decisions, and review tasks
 ```
 
+## Research Projects
+
+- `projects/investment_research/`: separate investment and personal finance research project for AI equities, Taiwan equities, US Treasuries, bond ETFs, dividend ETFs, portfolio policy, and investment memos.
+
 ## Key Documents
 
 - `docs/ai_os_system_spec.md`: Chinese AI OS system specification
 - `docs/organization_charter.md`: AI Agent OS organization charter
+- `projects/investment_research/README.md`: Investment research project overview
 - `agents/investment_agent.md`: Investment strategy and portfolio discipline agent
 - `knowledge_base/domains/investing/investment_framework.md`: Investment analysis framework
 - `knowledge_base/domains/investing/portfolio_policy.md`: Personal portfolio policy template
 - `workflows/agent_loop.json`: Core agent loop
 - `schemas/knowledge_base.sql`: SQLite knowledge base schema
-
