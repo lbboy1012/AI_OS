@@ -1,3 +1,8 @@
+> ⚠️ **版本說明(2026-06-10):** 此 repo 是 **Codex 規劃版**的 AI_OS(多 agent + 主題分資料夾)。
+> 另有一套 **Claude Code 規劃版**(狀態分層:raw → candidate → knowledge)在 private repo **`AI-OS-Family`**。
+> **兩方案的正式比較 / merge 尚未進行,兩版都還沒定案。** 完整來龍去脈與搬遷清單見
+> `AI-OS-Family` 的 `decisions/2026-06-10-two-repos-lineage.md`。
+
 # AI Agent OS
 
 AI Agent OS is a multi-agent cognitive operating system with a second-brain knowledge base. Chief Agent coordinates Research, Analysis, Investment, Execution, Knowledge, and Document Agents. Codex / Claude Code acts as the execution layer, while important outputs are persisted into the evolving knowledge base.
